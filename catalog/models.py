@@ -5,7 +5,7 @@ import uuid
 class Genre(models.Model):
     name = models.CharField(max_length=150, help_text='Enter Genre')
 
-    def __str__():
+    def __str__(self):
         return self.name
 
 
@@ -19,10 +19,10 @@ class Book(models.Model):
     #Meta
 
     #methods
-    def __str__():
+    def __str__(self):
         return self.title
 
-    def get_absolute_url():
+    def get_absolute_url(self):
         return reverse('book-detials', args=[str(self.id)])
 
 
@@ -50,8 +50,8 @@ class BookInstance(models.Model):
     class Meta:
         ordering = ['due_back']
 
-    def __str__():
-        return f'{self.id} {seld.book.title}'
+    def __str__(self):
+        return f'{self.id} {self.book.title}'
 
 
 class Author(models.Model):
@@ -60,8 +60,8 @@ class Author(models.Model):
     class Meta:
         ordering=['name']
 
-    def __str__():
+    def __str__(self):
         return self.name
 
-    def get_absolute_url():
+    def get_absolute_url(self):
         return reverse('author-details', args = [str(self.id)])
